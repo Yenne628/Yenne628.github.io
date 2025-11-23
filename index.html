@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옌느의 개인 홈페이지</title>
+    <style>
+        /* ================================================= */
+        /* == 기본 및 레이아웃 스타일 == */
+        /* ================================================= */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* 배경색: 연한 노란색/베이지색 계열 */
+            background-color: #ffedb0; 
+            color: #333;
+            text-align: center;
+        }
+
+        /* 시계 스타일 */
+        #clock { 
+            background-color: #ffffb7; /* 배경색: 연한 노란색 */
+            color: #ffa600; /* 텍스트 색상: 주황색 */
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px 0;
+            border-bottom: 3px solid #ffffb7;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: center;
+            width: 100%; /* 가로 폭 100% 사용 */
+        }
+        #current-time {
+            font-size: 2.5em; 
+            display: block; /* 줄바꿈 */
+        }
+
+        /* 컨테이너 스타일: 화면 폭 전체를 사용하고 여백 제거 */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0; 
+            padding: 50px 20px; /* 상하 여백을 줄이고 좌우 여백을 조금 줌 */
+            background-color: #ffedb0;
+            border-radius: 0; 
+            box-shadow: none; 
+        }
+
+        /* 제목 및 텍스트 스타일 */
+        h1 {
+            color: #ffa600;
+            text-align: center;
+            margin-top: 0;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px; /* ✨ 단락 간격 추가 */
+            text-align: center; 
+        }
+        .contact {
+            margin-top: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+
+        /* ================================================= */
+        /* == 이미지 스타일 == */
+        /* ================================================= */
+        /* 이미지 래퍼 (가운데 정렬) */
+        .profile-image-wrapper,
+        .intro-image-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* 상단 프로필 이미지 (원형, 작게) */
+        .profile-image {
+            width: 100px; 
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -50px; /* 이미지를 시계 영역과 컨테이너 경계에 위치시키기 위해 조정 */
+        }
+        
+        /* 제목 아래 소개 이미지 (사각형, 비율 유지) */
+        .intro-image {
+            max-width: 90%; 
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* ================================================= */
+        /* == 버튼 스타일 (3개씩 정렬, 모바일 최적화) == */
+        /* ================================================= */
+        .button-group-wrapper {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .button-group {
+            display: flex; 
+            justify-content: center;
+            flex-wrap: wrap; 
+            width: 100%; 
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            
+            background-color: #ffc800; 
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+            /* 3개씩 정렬을 위한 너비 계산 */
+            width: calc(33.33% - 40px);
+            min-width: 150px; 
+            box-sizing: border-box; 
+        }
+        .btn:hover {
+            background-color: #ffd439;
+            transform: translateY(-2px);
+        }
+
+        /* ================================================= */
+        /* == 모바일 반응형 디자인 == */
+        /* ================================================= */
+        @media (max-width: 600px) {
+            .btn {
+                width: calc(100% - 20px); /* 모바일: 버튼을 세로로 1개씩 */
+                margin: 10px auto; 
+                display: block;
+            }
+            .container {
+                padding: 50px 15px; /* 모바일: 좌우 여백 줄임 */
+            }
+            /* 시계 폰트 크기 조정 */
+            #current-time {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="clock">
+        <span id="current-time"></span> <span id="current-date"></span> 
+    </div>
+
+    <div class="container">
+        <div class="profile-image-wrapper">
+            <img src="https://media.discordapp.net/attachments/1322152571103875082/1442147951911895110/D7872483-6A52-4AB2-8B0C-AB1550F47D10.PNG?ex=69246071&is=69230ef1&hm=5e7509255397cd9b6fd0e484eb4bae3b5a681f15f7ce7b2621b7d3a491ab49f9&=&format=webp&quality=lossless&width=1024&height=1024" alt="프로필 사진" class="profile-image">
+        </div>
+        
+        <h1> 옌느의 개인 홈페이지 </h1>
+        
+        <img src="https://cdn.discordapp.com/attachments/1322152571103875082/1442150277653200936/445C2401-DC0B-4C47-A995-E3661EF43C17.jpeg?ex=6924629c&is=6923111c&hm=10191c8899dc78803c4c6db5d2ee44e1b5a1651e02f3453dc014a19721a87790&" class="intro-image" alt="소개 이미지">
+        
+        <p style="margin-bottom: 50px;"> ©손님 </p>
+        <p>심성훈 위주의 계정으로 다른 남주 언급은 거의 없습니다.</p>
+        <p>다른 오토메 게임 (빛밤)은 다른 트친과의 멘션으로만 언급 합니다.</p>
+        <p>혼잣말 트윗 잦아요!</p>
+        <p>높은 수위 발언은 삐계에서만 합니다. 일반계겸 사담계에서도 주로 활동합니당 (럽딥 이야기도 하고 타장르 이야기도 해용)</p>
+            
+        <div class="contact">
+            <p>✨트위터 아이디 : @Yenne__</p>
+        </div>
+
+        <div class="button-group-wrapper">
+            <h2> 링크 바로가기!! </h2>
+            <div class="button-group">
+                <a href="https://curious.quizby.me/yenne" target="_blank" class="btn">큐리어스</a>
+                <a href="https://linen-grass-d8a.notion.site/2a65ee0db0ee80cc8d0bea451139c134?source=copy_link" target="_blank" class="btn">디자인 작업물</a>
+                <a href="https://x.com/hxxnrxn_?s=21" target="_blank" class="btn">드림계</a>
+                <a href="https://www.postype.com/@lovessh" target="_blank" class="btn">포스타입</a>
+                <a href="" target="_blank" class="btn">추가예정</a>
+                <a href="" target="_blank" class="btn">추가예정</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function updateClock() {
+        const now = new Date();
+        
+        // 시간 포맷 (24시간 형식)
+        const timeString = now.toLocaleTimeString('ko-KR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false // 24시간 형식 적용
+        });
+        
+        // 날짜 포맷
+        const dateString = now.toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long' 
+        });
+        
+        // HTML 요소에 각각 삽입
+        document.getElementById('current-time').innerText = timeString;
+        document.getElementById('current-date').innerText = dateString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+    </script>
+</body>
+</html>
